@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rukhsati Invitation | Nisha & Abdulahad</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #8a3a5d;
+            --secondary-color: #d4af37;
+            --accent-soft: #f7e8ef;
+            --text-dark: #2c2c2c;
+            --text-muted: #666666;
+            --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            --card-shadow: 0 15px 35px rgba(138, 58, 93, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f9f6f7;
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Floral Pattern */
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(247, 232, 239, 0.8) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.15) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        /* Main Card Container */
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            max-width: 520px;
+            width: 100%;
+            border-radius: 24px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* Top Header Banner */
+        .card-header {
+            padding: 30px 20px 10px;
+            position: relative;
+        }
+
+        .bismillah {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .invitation-type {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        /* Video / Reference Media Section */
+        .video-container {
+            width: 100%;
+            max-height: 380px;
+            overflow: hidden;
+            position: relative;
+            background: #111;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Names Section */
+        .names-container {
+            padding: 25px 20px 15px;
+        }
+
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.2rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .weds-tag {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin: 5px 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px auto;
+            width: 70%;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .divider i {
+            color: var(--primary-color);
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Host Information */
+        .parents-section {
+            padding: 0 25px 20px;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .parents-section strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Event Details Grid */
+        .details-section {
+            background: var(--accent-soft);
+            padding: 25px 20px;
+            margin: 10px 20px 25px;
+            border-radius: 16px;
+            border: 1px dashed rgba(138, 58, 93, 0.3);
+        }
+
+        .detail-item {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-icon {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .detail-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .detail-value {
+            font-size: 0.98rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            padding: 10px 20px 25px;
+        }
+
+        .countdown-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .time-box {
+            background: #fff;
+            padding: 10px 12px;
+            border-radius: 12px;
+            min-width: 65px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .time-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .time-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* Action Buttons */
+        .actions-section {
+            padding: 0 20px 30px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #a84873);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(138, 58, 93, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(138, 58, 93, 0.4);
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-soft);
+        }
+
+        /* Audio Control Button Floating */
+        .audio-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .audio-control:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            .couple-names {
+                font-size: 2.6rem;
+            }
+            .invitation-card {
+                border-radius: 16px;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <div class="invitation-card">
+        <!-- Card Header -->
+        <div class="card-header">
+            <div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+            <div class="invitation-type">Rukhsati Invitation</div>
+        </div>
+
+        <!-- Video Reference Presentation -->
+        <div class="video-container">
+            <video id="introVideo" autoplay loop muted playsinline poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 100 100'><rect width='100%' height='100%' fill='%23f7e8ef'/><text x='50%' y='50%' fill='%238a3a5d' font-size='8' text-anchor='middle'>Nisha weds Abdulahad</text></svg>">
+                <source src="nisintro.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+        </div>
+
+        <!-- Couple Names -->
+        <div class="names-container">
+            <div class="couple-names">Nisha</div>
+            <div class="weds-tag">Weds</div>
+            <div class="couple-names">Abdulahad</div>
+            
+            <div class="divider">
+                <i class="fa-solid => fa-heart"></i>
+            </div>
+        </div>
+
+        <!-- Parents / Hosts Info -->
+        <div class="parents-section">
+            <p>Daughter of</p>
+            <p><strong>Arifbhai Muhammadbhai Vahora</strong></p>
+            <p>& <strong>Farjanaben Arifbhai Vahora</strong></p>
+            <p style="margin-top: 10px; font-style: italic;">
+                Cordially invite you to grace the auspicious occasion of the Rukhsati ceremony and bless the newlyweds.
+            </p>
+        </div>
+
+        <!-- Venue & Date Details -->
+        <div class="details-section">
+            <!-- Date & Time -->
+            <div class="detail-item">
+                <div class="detail-icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                </div>
+                <div class="detail-title">Date & Time</div>
+                <div class="detail-value">Saturday, 12th December 2026</div>
+                <div class="detail-value" style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">Evening</div>
+            </div>
+
+            <!-- Location -->
+            <div class="detail-item" style="margin-top: 15px;">
+                <div class="detail-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="detail-title">Venue</div>
+                <div class="detail-value">Roshni Farm House</div>
+                <div class="detail-value" style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">
+                    Kheda Camp, Near Gebanshah Dargah, Kheda
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Countdown -->
+        <div class="countdown-container">
+            <div class="countdown-title">Counting Down To The Celebration</div>
+            <div class="timer">
+                <div class="time-box">
+                    <div class="time-number" id="days">00</div>
+                    <div class="time-label">Days</div>
+                </div>
+                <div class="time-box">
+                    <div class="time-number" id="hours">00</div>
+                    <div class="time-label">Hours</div>
+                </div>
+                <div class="time-box">
+                    <div class="time-number" id="minutes">00</div>
+                    <div class="time-label">Mins</div>
+                </div>
+                <div class="time-box">
+                    <div class="time-number" id="seconds">00</div>
+                    <div class="time-label">Secs</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions-section">
+            <a href="https://maps.google.com/?q=Roshni+farm+house+kheda+camp+near+gebanshah+dargah" target="_blank" class="btn btn-primary">
+                <i class="fa-solid fa-map-location-dot"></i> Get Directions
+            </a>
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Rukhsati+-+Nisha+weds+Abdulahad&dates=20261212T130000Z/20261212T170000Z&details=Rukhsati+Ceremony+of+Nisha+and+Abdulahad&location=Roshni+farm+house+kheda+camp+near+gebanshah+dargah" target="_blank" class="btn btn-secondary">
+                <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Audio Controls -->
+    <div class="audio-control" id="audioToggle" title="Toggle Music">
+        <i class="fa-solid fa-music" id="audioIcon"></i>
+    </div>
+
+    <audio id="bgAudio" loop>
+        <source src="nisaudio.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Audio Toggle Feature
+        const audio = document.getElementById('bgAudio');
+        const audioToggle = document.getElementById('audioToggle');
+        const audioIcon = document.getElementById('audioIcon');
+        let isPlaying = false;
+
+        audioToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                audioIcon.className = 'fa-solid fa-music';
+            } else {
+                audio.play().then(() => {
+                    audioIcon.className = 'fa-solid fa-pause';
+                }).catch(err => {
+                    console.log('Audio playback prevented:', err);
+                });
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Countdown Timer Script
+        const eventDate = new Date('December 12, 2026 18:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').innerText = "00";
+                document.getElementById('hours').innerText = "00";
+                document.getElementById('minutes').innerText = "00";
+                document.getElementById('seconds').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
